@@ -1,0 +1,16 @@
+.st1 {
+  display: inline;
+}
+.st2 {
+  fill: #ffffff;
+}
+.st3 {
+  fill: var(--main-accent-color);
+}
+.st4 {
+  opacity: 0.9;
+}
+.st5 {
+  opacity: 0.9;
+  fill: var(--secondary-accent-color);
+}
