@@ -3,6 +3,7 @@ import { Link } from '@reach/router'
 import { useTranslation } from 'react-i18next';
  
 import TvLogo from './TvLogo';
+import TvLangSelector from './TvLangSelector';
 
 import './TvSidebar.css'
 
@@ -50,6 +51,7 @@ const TvSidebar = ({
                 </div>
                 <div className="tv-language">
                     <div className="tv-language-placeholder">
+                        <TvLangSelector />
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ i18n
   .use(LanguageDetector)
   .init({
     resources,
-    fallbackLng: 'ua',
+    fallbackLng: ['ua', 'en'],
     keySeparator: '.', // we use keys in form messages.welcome
 
     interpolation: {
