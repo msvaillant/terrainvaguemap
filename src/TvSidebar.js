@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from "@reach/router"
-
+import { Link } from '@reach/router'
+import { useTranslation } from 'react-i18next';
+ 
 import TvLogo from './TvLogo';
 
 import './TvSidebar.css'
@@ -13,19 +14,20 @@ const NavLink = props => {
     };
 
     return (
-        <div key={props.key} className="tv-navigation-item">
+        <div className="tv-navigation-item">
             <Link {...props} getProps={ isActive } />
         </div>
     );
 };
 
-function TvSidebar({ 
+const TvSidebar = ({ 
     routes = [],
     appName = ""
-}) {
+}) => {
+    const { t } = useTranslation();
 
     let routeNavItems = routes.map(route => 
-        <NavLink key={route.name} to={route.link}>{route.name}</NavLink>
+        <NavLink key={route.name} to={route.link}>{t(route.name)}</NavLink>
     );
 
     return (
