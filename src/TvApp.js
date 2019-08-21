@@ -1,7 +1,12 @@
 import React from 'react';
-import TvSidebar from './TvSidebar';
-import './TvApp.css';
+import { Router } from '@reach/router'
 
+import TvSidebar from './TvSidebar';
+import TvViewMap from './TvViewMap';
+import TvViewAbout from './TvViewAbout';
+import TvViewContact from './TvViewContact';
+
+import './TvApp.css';
 class TvApp extends React.Component {
   constructor(props) {
     super(props);
@@ -28,6 +33,11 @@ class TvApp extends React.Component {
         </div>
 
         <div className="tv-content">
+          <Router>
+            <TvViewMap path="/"/>
+            <TvViewAbout path="/about" />
+            <TvViewContact path="/contact" />
+          </Router>
         </div>
       </div>
     );
