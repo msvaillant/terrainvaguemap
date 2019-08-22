@@ -10,7 +10,7 @@ import './TvSidebar.css'
 const NavLink = props => {
     const isActive = ({ isCurrent }) => {
         return {
-            className : isCurrent ? 'tv-link-current' : 'tv-link'
+            className : isCurrent ? 'tv-link current' : 'tv-link'
         };
     };
 
@@ -34,11 +34,7 @@ const TvSidebar = ({
     return (
         <nav className="tv-sidebar-content">
             <Link className="tv-header" to="/">
-                <div className="logo-container">
-                    <div className="logo">
-                        <TvLogo />
-                    </div>
-                </div>
+                <TvLogo />
             </Link>
             <div className="tv-navigation">
                 {routeNavItems}

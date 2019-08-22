@@ -6,7 +6,7 @@ import './TvViewAbout.css';
 const TvViewAbout = () => {
     const { t } = useTranslation();
     const mail = 'project.terrainvague@gmail.com';
-    const facebookPage = 'https://www.facebook.com/project.terrainvague';
+    const facebookPage = 'https://www.facebook.com/terrainvagueplatform/';
 
     const text = t('about.text', { tvmap : 'terrainvaguemap', returnObjects: true }).map((par, index) => {
         return (
@@ -16,7 +16,7 @@ const TvViewAbout = () => {
 
     return (
         <div className="tv-about-content">
-            <div className="headline">
+            <div className="tv-about-headline">
                 <Trans 
                 i18nKey='about.headline'
                 components={[
@@ -26,14 +26,14 @@ const TvViewAbout = () => {
                 ]}
                 />
             </div>
-            <div>
+            <div className="tv-about-text">
                 {text}
             </div>                
-            <div>
+            <div className="tv-about-feedback">
                 <Trans 
                 i18nKey='about.feedback'
                 values = {{ tvmail: mail }}
-                components = {[<a href={facebookPage}></a>, <a href={`mailto:${mail}`}></a>]}
+                components = {[<a className="tv-hyperlink" href={facebookPage}></a>, <a className="tv-hyperlink" href={`mailto:${mail}`}></a>]}
                 />
             </div>
         </div>

@@ -1,0 +1,67 @@
+.tv-contact-content {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.tv-contact-content p {
+  width: 70%;
+}
+
+.tv-contactform {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 100px;
+  grid-row-gap: 20px;
+}
+
+form label {
+  display: block;
+  padding-bottom: 20px;
+}
+
+form button.tv-send {
+  margin-top: 1em;
+  width: fit-content;
+  padding-left: 2em;
+  padding-right: 2em;
+  cursor: pointer;
+  border: solid 1px var(--secondary-accent-color);
+  background: transparent;
+  color: var(--secondary-accent-color);
+  vertical-align: middle;
+}
+
+form button.tv-send:focus {
+  outline-color: var(--secondary-accent-color);
+}
+
+form input {
+  height: 1.2em;
+  border-style: groove;
+  border-color: #000000;
+  border-width: 0px 1px 1px 1px;
+  background: transparent;
+  width: 100%;
+}
+
+form input:focus {
+  outline-color: var(--secondary-accent-color);
+}
+
+form textarea:focus {
+  outline-color: var(--secondary-accent-color);
+}
+
+form textarea {
+  height: 6em;
+  resize: none;
+  border-style: groove;
+  border-color: #000000;
+  border-width: 1px 1px 1px 1px;
+  background: transparent;
+  width: 100%;
+}
+form div {
+  margin: 0;
+}

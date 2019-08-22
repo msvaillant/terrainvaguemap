@@ -1,12 +1,24 @@
-.st1 {
-  display: inline;
+.logo-container {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding: 0;
+  padding-bottom: 30%;
 }
-.st2 {
-  fill: #ffffff;
+
+.logo-container .logo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
 }
-.st3 {
+
+.logo:hover .st5 {
+  opacity: 0.8;
   fill: var(--main-accent-color);
 }
+
 .st4 {
   opacity: 0.9;
 }

@@ -13,22 +13,6 @@
   padding-bottom: 64px;
 }
 
-.logo-container {
-  position: relative;
-  height: 0;
-  width: 100%;
-  padding: 0;
-  padding-bottom: 30%;
-}
-
-.logo-container .logo {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-}
-
 .tv-navigation .tv-navigation-item {
   padding-top: 20px;
   padding-left: 20px;
@@ -45,8 +29,8 @@ a.tv-link:hover {
   color: var(--main-accent-color);
 }
 
-a.tv-link-current {
-  color: var(--main-accent-color);
+a.current {
+  color: var(--secondary-accent-color);
   text-decoration: none;
 }
 

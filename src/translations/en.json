@@ -13,5 +13,18 @@
          "This collaboration launches the process of tracking waste sites in order to do an analysis and, if possible, the process of their participatory and collaborative reactivation."
       ],
       "feedback" : "Any question or suggestions? We invite you to contact the team of the project via <0>Facebook messenger</0> or e-mail: <1>{{tvmail}}</1>"
-   }
+   },
+   "contact": {
+      "header": "want to propose a wasted site at Dnipro? we invite you to aswer following questions so we will be able to extend our list of places on our map with information you can provide",
+      "labels" : {
+         "email": "email",
+         "name": "your name",
+         "address": "site address",
+         "description": "description of place",
+         "state": "actual state of place",
+         "link": "link to additional information",
+         "photos": "photos of place"
+      },
+      "send": "submit"
+   } 
 }

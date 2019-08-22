@@ -1,9 +1,32 @@
-.tv-about-content {
-  margin-top: 110px;
+a.tv-hyperlink {
+  text-decoration: none;
+  color: var(--secondary-accent-color);
 }
 
-.headline {
+a.tv-hyperlink:hover {
+  color: var(--main-accent-color);
+}
+/* 
+a.tv-hyperlink:visited {
+  color: var(--font-main-color);
+} */
+
+.tv-about-content {
+  margin-top: 110px;
+  margin-bottom: 50px;
+}
+
+.tv-about-headline {
   margin-bottom: 24px;
+}
+
+.tv-about-feedback {
+  margin-top: 24px;
+}
+
+.tv-about-text p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
 }
 
 .tv {
@@ -12,7 +35,7 @@
 
 .tv-map {
   font-weight: 700;
-  color: var(--main-accent-color);
+  color: var(--secondary-accent-color);
 }
 
 .tv-phonetics {

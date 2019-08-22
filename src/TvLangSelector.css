@@ -13,7 +13,7 @@
 }
 
 .tv-langselector button.current-lang {
-  color: var(--main-accent-color);
+  color: var(--secondary-accent-color);
 }
 
 .tv-langselector button:focus {
