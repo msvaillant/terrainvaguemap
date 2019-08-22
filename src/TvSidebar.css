@@ -34,7 +34,6 @@
   padding-left: 20px;
   padding-bottom: 20px;
   width: 100%;
-  font-size: var(--normal-font-size);
 }
 
 a.tv-link {
@@ -59,7 +58,6 @@ a.tv-link-current {
 }
 
 .tv-sidebar-content .tv-footer .tv-copyright {
-  font-size: var(--normal-font-size);
   margin-left: 20px;
 }
 

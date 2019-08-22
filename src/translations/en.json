@@ -4,14 +4,14 @@
       "about": "about"
    },
    "about": {
-      "headline": "{tvmap}, beta version",
+      "headline": "<0>terrainvague</0><1>map</1>, beta version",
       "text": [
          "This is an interactive map of waste sites (fr: terrain vague) of the city of Dnipro (Ukraine), created by Anastasiia Kondratieva (art direction/design) and Nataliia Nazarchuk (development HTML/JavaScript) and based on the developer platform Mapbox.",
-         "Now being a part of the educational project « Terrain vague », terrainvaguemap is a key element of the tactical and participatory urbanism in the post-soviet city. This map is accessible to anyone who wants to start reaching consciousness of the existence of such places, see their nature, or to offer the team of the project the place which he/she considers as waste site.",
-         "terrainvaguemap allows citizens to get all available essential information (address, history, current state, photos, proposals of reactivation, if present) in real time about the waste site which was clicked.",
+         "Now being a part of the educational project «Terrain vague», {{- tvmap}} is a key element of the tactical and participatory urbanism in the post-soviet city. This map is accessible to anyone who wants to start reaching consciousness of the existence of such places, see their nature, or to offer the team of the project the place which he/she considers as waste site.",
+         "{{- tvmap}} allows citizens to get all available essential information (address, history, current state, photos, proposals of reactivation, if present) in real time about the waste site which was clicked.",
          "The team of the project now invites you to get acquainted with the map which already shows the location of some waste sites of the city of Dnipro and to offer new waste sites by filling in a feedback form (please indicate the location of a place and offer any additional information, which would be beneficial in you opinion).",
          "This collaboration launches the process of tracking waste sites in order to do an analysis and, if possible, the process of their participatory and collaborative reactivation."
       ],
-      "feedback" : "Any question or suggestions? We invite you to contact the team of the project via Facebook messenger or e-mail: {tvmail}"
+      "feedback" : "Any question or suggestions? We invite you to contact the team of the project via <0>Facebook messenger</0> or e-mail: <1>{{tvmail}}</1>"
    }
 }

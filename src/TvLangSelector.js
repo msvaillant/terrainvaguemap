@@ -5,7 +5,7 @@ import './TvLangSelector.css';
 
 const TvLangSelector = () => {
     const { i18n } = useTranslation();
-    const isCurrent = (lang) => i18n.language==lang ? 'current-lang' : null
+    const isCurrent = (lang) => i18n.language === lang ? 'current-lang' : null
 
     return (
         <div className="tv-langselector">
