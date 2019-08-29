@@ -1,6 +1,7 @@
 a.tv-hyperlink {
   text-decoration: none;
   color: var(--secondary-accent-color);
+  font-weight: 500;
 }
 
 a.tv-hyperlink:hover {

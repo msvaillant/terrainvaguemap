@@ -33,7 +33,7 @@ const TvViewAbout = () => {
                 <Trans 
                 i18nKey='about.feedback'
                 values = {{ tvmail: mail }}
-                components = {[<a className="tv-hyperlink" href={facebookPage}></a>, <a className="tv-hyperlink" href={`mailto:${mail}`}></a>]}
+                components = {[<a className="tv-hyperlink" href={facebookPage}>{facebookPage}</a>, <a className="tv-hyperlink" href={`mailto:${mail}`}>{mail}</a>]}
                 />
             </div>
         </div>

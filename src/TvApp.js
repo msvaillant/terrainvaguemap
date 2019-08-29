@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Router } from '@reach/router'
 
 import TvSidebar from './TvSidebar';
@@ -22,14 +22,6 @@ const routes = [
 
 const TvApp = (props) => {
   const appName = "Terrain vague";
-
-  // useEffect(() => {
-  //   const usrLanguage = navigator.language.split(/[-_]/)[0];
-  //   if(usrLanguage){
-  //     console.debug(usrLanguage);
-  //     setLocale(usrLanguage);
-  //   }
-  // }, []);
 
   return (
     <div className="tv-app">
