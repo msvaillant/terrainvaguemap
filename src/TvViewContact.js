@@ -1,7 +1,23 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import * as emailjs from "emailjs-com";
 
 import "./TvViewContact.css";
+
+import { mailjsSettings } from './settings.json';
+
+// TODO: add photos sending functionality
+// TODO: add form validation
+
+const initialFormState = {
+  email: "",
+  name: "",
+  address: "",
+  description: "",
+  state: "",
+  link: "",
+  photos: ""
+};
 
 const TvInput = ({
   id = "",
@@ -36,15 +52,7 @@ const TvTextArea = ({ id = "", name, value, placeholder, onChangeHandler }) => {
 
 const TvViewContact = () => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({
-    email: "",
-    name: "",
-    address: "",
-    description: "",
-    state: "",
-    link: "",
-    photos: []
-  });
+  const [formData, setFormData] = useState(initialFormState);
 
   const _сhangeHandler = event => {
     const target = event.target;
@@ -64,8 +72,25 @@ const TvViewContact = () => {
 
   const _submitHandler = event => {
     event.preventDefault();
-    console.log(formData);
-    alert("You are submitting !", formData);
+    emailjs
+      .send(
+        mailjsSettings.serviceId,
+        mailjsSettings.templateId,
+        formData,
+        mailjsSettings.userId
+      )
+      .then(() => {
+        //TODO: remove alert
+        /*eslint no-alert: "warn"*/
+        alert("Form successfully submitted !");
+        setFormData(initialFormState);
+      })
+      .catch(err => {
+        //TODO: remove alert
+        /*eslint no-alert: "warn"*/
+        alert('Sorry, error occured whyle sending the request, please try again ):');
+        console.log(err);
+      });
   };
 
   return (
