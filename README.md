@@ -5,10 +5,17 @@ This is the reposository with sources for Terrain Vague app.
 ## Technologies used
 
 - ReactJs: frontend framework used for application structure.
+- Reach Router: modern react routing lib.
+- i18next: translation management framework.
+- react-mapbox-gl: React wrapper over mapbox.
+- react-slick: React carousel, wrapper over js slick.
+- email-js: JS service for sending email with clientside only apps.
 
 ## Prerequisitories
 
-- Nodejs
+- Nodejs: javascript development platform
+- `settings.json`: file with app confidential information & configurations
+- `resources.json`: the file with project data (instead of database, yeah..)
 
 ## Available Scripts
 
