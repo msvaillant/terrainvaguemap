@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import "./TvViewMap.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+// TODO: fix resources loading in bundle, they should be requested after page load
+// TODO: investigate mapbox in app layer creation
 import resources from "./resources.json";
 import { accessToken } from "./settings.json";
 
@@ -16,6 +18,7 @@ const Map = ReactMapboxGl({
   maxZoom
 });
 
+// TODO: investigate why transition doesn't populate animation
 const flyToOptions = {
   speed: 0.8
 };
@@ -121,7 +124,7 @@ function TvViewMap() {
         flyToOptions={flyToOptions}
       >
         <ZoomControl position="bottom-right" />
-        {popupState && (
+        {popupState && ( // TODO: extract popup to separate component
           <Popup coordinates={popupState.coordinates}>
             <div className="place-info">
               <button
