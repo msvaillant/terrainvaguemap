@@ -18,14 +18,33 @@ const Map = ReactMapboxGl({
   maxZoom
 });
 
-// TODO: investigate why transition doesn't populate animation
-const flyToOptions = {
-  speed: 0.8
-};
 const initialLongitude = 35.051303,
   initialLatitude = 48.45959;
-const citeZoom = 14;
 
+function TvCross(props) {
+  return (
+    <div {...props}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="15"
+        height="15"
+        viewBox="0 0 15 15"
+      >
+        <g id="cross-out-mark" transform="translate(-.024)">
+          <g id="Groupe_16" data-name="Groupe 16" transform="translate(.024)">
+            <path
+              id="Tracé_25"
+              d="M15.024 1.162L13.864 0l-6.34 6.339L1.185 0 .024 1.161 6.364 7.5l-6.34 6.339L1.185 15l6.34-6.34L13.864 15l1.16-1.162L8.685 7.5z"
+              style={{ fill: "#d0d0d0" }}
+              data-name="Tracé 25"
+              transform="translate(-.024)"
+            />
+          </g>
+        </g>
+      </svg>
+    </div>
+  );
+}
 
 function TvSliderArrow(props) {
   const { className, style, onClick } = props;
@@ -35,6 +54,47 @@ function TvSliderArrow(props) {
       style={style}
       onClick={onClick}
     />
+  );
+}
+
+function TvMapPopup({ coordinates, info, onPopupClose }) {
+  const settings = {
+    dots: true,
+    infinite: true,
+    nextArrow: <TvSliderArrow />,
+    prevArrow: <TvSliderArrow />
+  };
+
+  return (
+    <Popup coordinates={coordinates}>
+      <div className="place-info">
+        <div className="place-close">
+          <TvCross className="cross" onClick={onPopupClose} />
+        </div>
+        <div className="place-info-content">
+          <h3 className="nam">{info.name}</h3>
+          <p className="adr">{info.adresse}</p>
+          <p className="desc">{info.description}</p>
+          <p className="status">{info.status}</p>
+          <p className="state">{info.state}</p>
+          {info.pictures && info.pictures.length > 0 && (
+            <div
+            // style={{
+            //   padding
+            // }}
+            >
+              <Slider {...settings}>
+                {info.pictures.map((picture, idx) => (
+                  <img key={idx} src={picture}></img>
+                ))}
+              </Slider>
+            </div>
+          )}
+          <p className="upd">{info.update}</p>
+          <p className="last_upd">{info.lastUpdated}</p>
+        </div>
+      </div>
+    </Popup>
   );
 }
 
@@ -79,8 +139,6 @@ function TvViewMap() {
       }
     };
 
-    setLocation(coordinates);
-    setZoomState([citeZoom]);
     setPopupState(newPopupState);
   };
   //const onClickEventHandler = useCallback(_onClick, [geoJson]);
@@ -99,13 +157,6 @@ function TvViewMap() {
     console.log(layer);
   };
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    nextArrow: <TvSliderArrow />,
-    prevArrow: <TvSliderArrow />
-  };
-
   return (
     <>
       <Map
@@ -121,47 +172,16 @@ function TvViewMap() {
         onStyleLoad={_onMapLoad}
         //onClick={onClickEventHandler}
         onClick={_onClick}
-        flyToOptions={flyToOptions}
       >
         <ZoomControl position="bottom-right" />
-        {popupState && ( // TODO: extract popup to separate component
-          <Popup coordinates={popupState.coordinates}>
-            <div className="place-info">
-              <button
-                style={{
-                  background: "transparent",
-                  border: 0,
-                  float: "right",
-                  cursor: "pointer"
-                }}
-                onClick={() => {
-                  setPopupState(undefined);
-                }}
-              >
-                x
-              </button>
-              <h3 className="nam">{popupState.info.name}</h3>
-              <p className="adr">{popupState.info.adresse}</p>
-              <p className="desc">{popupState.info.description}</p>
-              <p className="status">{popupState.info.status}</p>
-              <p className="state">{popupState.info.state}</p>
-              {popupState.info.pictures && popupState.info.pictures.length > 0 && (
-                <div
-                  style={{
-                    padding: 20
-                  }}
-                >
-                  <Slider {...settings}>
-                    {popupState.info.pictures.map((picture, idx) => (
-                      <img key={idx} src={picture}></img>
-                    ))}
-                  </Slider>
-                </div>
-              )}
-              <p className="upd">{popupState.info.update}</p>
-              <p className="last_upd">{popupState.info.lastUpdated}</p>
-            </div>
-          </Popup>
+        {popupState && (
+          <TvMapPopup
+            coordinates={popupState.coordinates}
+            info={popupState.info}
+            onPopupClose={() => {
+              setPopupState(undefined);
+            }}
+          />
         )}
       </Map>
     </>

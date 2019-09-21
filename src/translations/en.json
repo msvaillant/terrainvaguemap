@@ -4,7 +4,7 @@
       "about": "about"
    },
    "about": {
-      "headline": "<0>terrainvague</0><1>map</1>, beta version",
+      "headline": "{{- tvmap}}, beta version",
       "text": [
          "This is an interactive map of waste sites (fr: terrain vague) of the city of Dnipro (Ukraine), created by Anastasiia Kondratieva (art direction/design), Serhii Matviienko (Frontend Reactjs development) and Nataliia Nazarchuk (development HTML/JavaScript) and based on the developer platform Mapbox.",
          "Now being a part of the educational project «Terrain vague», {{- tvmap}} is a key element of the tactical and participatory urbanism in the post-soviet city. This map is accessible to anyone who wants to start reaching consciousness of the existence of such places, see their nature, or to offer the team of the project the place which he/she considers as waste site.",

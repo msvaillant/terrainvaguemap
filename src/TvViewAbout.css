@@ -1,12 +1,9 @@
 a.tv-hyperlink {
   text-decoration: none;
-  color: var(--secondary-accent-color);
+  color: #000000;
   font-weight: 500;
 }
 
-a.tv-hyperlink:hover {
-  color: var(--main-accent-color);
-}
 /* 
 a.tv-hyperlink:visited {
   color: var(--font-main-color);

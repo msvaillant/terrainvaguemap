@@ -21,11 +21,7 @@ const TvViewAbout = () => {
       <div className="tv-about-headline">
         <Trans
           i18nKey="about.headline"
-          components={[
-            <span className="tv"></span>,
-            <span className="tv-map"></span>,
-            <span className="tv-phonetics"></span>
-          ]}
+          values={{ tvmap : "terrainvaguemap" }}
         />
       </div>
       <div className="tv-about-text">{text}</div>
